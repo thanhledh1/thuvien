@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(1);
+        
+        // Quá trình thực hiện bất đồng bộ
+        setTimeout(() => {
+            console.log(2);
+        }, 2000);
+
+        console.log(3);
+
+
+        // Xử lý bất đồng bộ
+        /*
+        promise
+        asyn/await
+        */
+
+        // let vu_hua_di_mua_bia = new Promise(function(resolve, reject){
+        //     // Vu mua bia v
+        //     let bia = true
+        //     if( bia ){
+        //         resolve('Bia')
+        //     }else{
+        //         reject('Không có bia')
+        //     }
+        // });
+
+        // // Có dữ liệu
+        vu_hua_di_mua_bia.then( function(data){
+            // console.log('Xy ly thanh cong',data);
+        });
+
+        // // Xử lý thất bại
+        // vu_hua_di_mua_bia.catch( function(data){
+        //     // console.log('Xu ly khi that bai',data);
+        // })
+
+
+        async function vu_hua_di_mua_bia(){
+            return await 'bia';
+        }
+
+        // Có dữ liệu
+        vu_hua_di_mua_bia().then( function(data){
+            console.log('await',data);
+        })
+
+        // Lỗi
+        vu_hua_di_mua_bia().catch( function(dâta){
+            
+        })
+
+
+    </script>
+</body>
+</html>
